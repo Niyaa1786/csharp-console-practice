@@ -69,6 +69,24 @@ namespace ConsoleProblems
             return reverseWord;
         }
 
+        // 07. Check is string Palindrome (is same word when reverse string)
+        static bool isPalindrome(string word)
+        {
+            if (string.IsNullOrWhiteSpace(word))
+                throw new ArgumentException("Word must not be null or whitespace");
+
+            var checkWord = word.Trim().ToLower();
+
+            var reverseLetters = checkWord.Reverse();
+            var reverseWord = string.Join("", reverseLetters);
+
+            if (reverseWord == checkWord)
+            {
+                return true;
+            }
+            return false;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

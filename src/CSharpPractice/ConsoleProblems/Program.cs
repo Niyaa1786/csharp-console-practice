@@ -22,6 +22,12 @@ namespace ConsoleProblems
             return "Odd";
         }
 
+        // 03. Find largest number in 3 numbers
+        static int LargestNumber(int a, int b, int c)
+        {
+            List<int> numbers = new List<int>() { a, b, c };
+            return numbers.Max();
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

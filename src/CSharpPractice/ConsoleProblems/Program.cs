@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Metadata.Ecma335;
+using System.Reflection.PortableExecutable;
 
 namespace ConsoleProblems
 {
@@ -99,6 +100,28 @@ namespace ConsoleProblems
             foreach (var character in wordChars)
             {
                 Console.WriteLine($"{character.Key}: {character.Value}");
+            }
+        }
+
+        // 09. Anagram Checking
+        static void CheckIsAnagram(string word1, string word2)
+        {
+            if (word1.Length != word2.Length)
+            {
+                Console.WriteLine($"No");
+                return;
+            }
+
+            var sortedWord1 = word1.OrderBy(p => p);
+            var sortedWord2 = word2.OrderBy(p => p);
+
+            if (sortedWord1.SequenceEqual(sortedWord2))
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
             }
         }
 

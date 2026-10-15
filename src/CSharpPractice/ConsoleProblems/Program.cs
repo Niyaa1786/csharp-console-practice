@@ -28,6 +28,23 @@ namespace ConsoleProblems
             List<int> numbers = new List<int>() { a, b, c };
             return numbers.Max();
         }
+
+        // 04. Sum from 1 to N number
+        static int TotalFromOneToN(int n)
+        {
+            if (n < 0)
+                throw new ArgumentException("Quantity must above 0");
+
+            int total = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                total += i;
+            }
+            return total;
+        }
+
+        // 05. FizzBuzz
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

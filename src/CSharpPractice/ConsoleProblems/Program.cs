@@ -95,7 +95,7 @@ namespace ConsoleProblems
                 throw new ArgumentException("Word must not be null or whitespace");
 
             var checkWord = word.Trim();
-            var wordChars = checkWord.CountBy(p => p);
+            var wordChars = checkWord.CountBy(c => c);
 
             foreach (var character in wordChars)
             {
@@ -112,8 +112,8 @@ namespace ConsoleProblems
                 return;
             }
 
-            var sortedWord1 = word1.OrderBy(p => p);
-            var sortedWord2 = word2.OrderBy(p => p);
+            var sortedWord1 = word1.OrderBy(c => c);
+            var sortedWord2 = word2.OrderBy(c => c);
 
             if (sortedWord1.SequenceEqual(sortedWord2))
             {

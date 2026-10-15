@@ -125,6 +125,30 @@ namespace ConsoleProblems
             }
         }
 
+        // 10. First character not duplicating
+        static void CheckFirstCharacterNotDuplicate(string word)
+        {
+            if (string.IsNullOrWhiteSpace(word))
+            {
+                Console.WriteLine("None");
+                return;
+            }
+
+            var characterWithOccurences = word.CountBy(c => c).ToDictionary(p => p.Key, p => p.Value);
+
+            foreach (var character in characterWithOccurences)
+            {
+                if (character.Value == 1)
+                {
+                    Console.WriteLine($"{character.Key}");
+                    return;
+                }
+                continue;
+            }
+
+            Console.WriteLine("None");
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

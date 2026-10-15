@@ -61,6 +61,14 @@ namespace ConsoleProblems
             return result;
         }
 
+        // 06. Reverse string word
+        static string ReverseStringLetters(string word)
+        {
+            var reverseLetters = word.Reverse();
+            var reverseWord = string.Join("", reverseLetters);
+            return reverseWord;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

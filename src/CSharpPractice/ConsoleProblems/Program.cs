@@ -12,6 +12,16 @@ namespace ConsoleProblems
             b = temp;
         }
 
+        // 02. Check even or odd
+        static string CheckOddOrEven(int number)
+        {
+            if (number % 2 == 0)
+            {
+                return "Even";
+            }
+            return "Odd";
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

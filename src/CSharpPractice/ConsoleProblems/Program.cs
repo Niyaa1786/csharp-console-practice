@@ -87,6 +87,21 @@ namespace ConsoleProblems
             return false;
         }
 
+        // 08. Count character occurrences
+        static void CheckCharOccurrences(string word)
+        {
+            if (string.IsNullOrWhiteSpace(word))
+                throw new ArgumentException("Word must not be null or whitespace");
+
+            var checkWord = word.Trim();
+            var wordChars = checkWord.CountBy(p => p);
+
+            foreach (var character in wordChars)
+            {
+                Console.WriteLine($"{character.Key}: {character.Value}");
+            }
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

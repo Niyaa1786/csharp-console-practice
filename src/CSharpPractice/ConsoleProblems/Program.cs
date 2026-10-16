@@ -250,10 +250,24 @@ namespace ConsoleProblems
                 }
             }
         }
+        // Fibonacci sequence
+        static void PrintFibSequence(int n)
+        {
+            int previous = 0;
+            int current = 1;
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{previous},");
+                int next = previous + current;
+                previous = current;
+                current = next;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            PrintPrimeNumber(20);
+            PrintFibSequence(10);
         }
 
         public static bool isPrime(int number)

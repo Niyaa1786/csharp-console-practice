@@ -218,13 +218,37 @@ namespace ConsoleProblems
             Console.Write("[");
             Console.Write($"{string.Join(",", mergedArray)}");
             Console.Write("]");
-
         }
 
-        //
+        // 16. Print is prime number
+        static void PrintIsPrime(int number)
+        {
+            if (isPrime(number))
+            {
+                Console.WriteLine("Is prime");
+            }
+            else
+            {
+                Console.WriteLine("Not prime");
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+        }
+
+        public static bool isPrime(int number)
+        {
+            if (number <= 1)
+                return false;
+
+
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
         }
     }
 }

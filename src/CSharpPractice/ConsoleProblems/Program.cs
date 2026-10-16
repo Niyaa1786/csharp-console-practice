@@ -1,5 +1,6 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices;
 
 namespace ConsoleProblems
 {
@@ -190,9 +191,28 @@ namespace ConsoleProblems
             var numberWithMostOccur = dictWithCount.MaxBy(p => p.Value);
             Console.WriteLine($"Number {numberWithMostOccur.Key}: {numberWithMostOccur.Value} times");
         }
+
+        // 14. Two Sum
+        static void PrintTwoSum(int[] array, int target)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] + array[j] == target)
+                    {
+                        Console.WriteLine($"Index {i} & {j} ({array[i]} + {array[j]})");
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine("No pair found");
+
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            PrintTwoSum([3, 3], 6);
         }
     }
 }

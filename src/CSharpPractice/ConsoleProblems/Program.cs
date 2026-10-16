@@ -232,9 +232,28 @@ namespace ConsoleProblems
                 Console.WriteLine("Not prime");
             }
         }
+
+        // 17. Print prime numbers to N
+        static void PrintPrimeNumber(int n)
+        {
+            if (n <= 1)
+            {
+                Console.Write("None");
+                return;
+            }
+
+            for (int i = 2; i <= n; i++)
+            {
+                if (isPrime(i))
+                {
+                    Console.Write($"{i}, ");
+                }
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            PrintPrimeNumber(20);
         }
 
         public static bool isPrime(int number)

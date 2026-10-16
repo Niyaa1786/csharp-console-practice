@@ -209,10 +209,22 @@ namespace ConsoleProblems
             Console.WriteLine("No pair found");
 
         }
+
+        // 15. Merged two array that has been sorted ascended
+        static void PrintJoinedArrayThatSorted(int[] array1, int[] array2)
+        {
+            var mergedArray = array1.Concat(array2).Order();
+
+            Console.Write("[");
+            Console.Write($"{string.Join(",", mergedArray)}");
+            Console.Write("]");
+
+        }
+
+        //
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            PrintTwoSum([3, 3], 6);
         }
     }
 }

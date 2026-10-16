@@ -169,6 +169,27 @@ namespace ConsoleProblems
             Console.Write("]");
 
         }
+
+        // 13. Find the most element occurences in the array
+        static void PrintTheMostElementOccurrences(int[] array)
+        {
+            if (array.Length == 0)
+            {
+                Console.WriteLine("[]");
+                return;
+            }
+
+            var arrayWithCount = array.CountBy(p => p);
+
+            var dictWithCount = new Dictionary<int, int>();
+            foreach (var pair in arrayWithCount)
+            {
+                dictWithCount[pair.Key] = pair.Value;
+            }
+
+            var numberWithMostOccur = dictWithCount.MaxBy(p => p.Value);
+            Console.WriteLine($"Number {numberWithMostOccur.Key}: {numberWithMostOccur.Value} times");
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

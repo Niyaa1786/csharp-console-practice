@@ -158,6 +158,17 @@ namespace ConsoleProblems
             Console.WriteLine($"Largest number: {largestNumb}");
             Console.WriteLine($"Smallest number: {smallestNumb}");
         }
+
+        // 12. Remove duplicate elements in the array 
+        static void PrintDistincArray(int[] array)
+        {
+            var distincArray = array.Distinct();
+
+            Console.Write("[");
+            Console.Write($"{string.Join(", ", distincArray)}");
+            Console.Write("]");
+
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

@@ -250,7 +250,7 @@ namespace ConsoleProblems
                 }
             }
         }
-        // Fibonacci sequence
+        // 18. Fibonacci sequence
         static void PrintFibSequence(int n)
         {
             int previous = 0;
@@ -264,10 +264,30 @@ namespace ConsoleProblems
                 current = next;
             }
         }
+
+        // 19. Factorial
+        static void PrintFactorial(long n)
+        {
+            if (n < 0)
+                throw new ArgumentException("n must be non-negative");
+
+            if (n == 0)
+            {
+                Console.WriteLine("1");
+                return;
+            }
+
+            var result = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                result *= i;
+            }
+            Console.WriteLine(result);
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            PrintFibSequence(10);
+            PrintFactorial(10);
         }
 
         public static bool isPrime(int number)

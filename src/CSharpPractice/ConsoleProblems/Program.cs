@@ -149,6 +149,15 @@ namespace ConsoleProblems
             Console.WriteLine("None");
         }
 
+        // 11. Find the largest/smallest in the array
+        static void PrintMinMaxInArray(int[] array)
+        {
+            var largestNumb = array.Max();
+            var smallestNumb = array.Min();
+
+            Console.WriteLine($"Largest number: {largestNumb}");
+            Console.WriteLine($"Smallest number: {smallestNumb}");
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");

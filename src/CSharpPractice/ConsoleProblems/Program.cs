@@ -284,10 +284,32 @@ namespace ConsoleProblems
             }
             Console.WriteLine(result);
         }
+
+        // 20. Greatest Common Divisor and Least Common Multiple
+        static void PrintGcdAndLcm(int a, int b)
+        {
+            long first = Math.Abs((long)a);
+            long second = Math.Abs((long)b);
+            long x = first;
+            long y = second;
+
+            while (y != 0)
+            {
+                long remainder = x % y;
+                x = y;
+                y = remainder;
+            }
+
+            long lcm = first / x * second;
+
+            Console.WriteLine($"Greatest Common Divisor: {x}");
+            Console.WriteLine($"Least Common Multiple: {lcm}");
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            PrintFactorial(10);
+            PrintGcdAndLcm(12, 18);
         }
 
         public static bool isPrime(int number)

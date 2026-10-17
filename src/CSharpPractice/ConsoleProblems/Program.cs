@@ -1,6 +1,8 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ConsoleProblems
 {
@@ -306,10 +308,76 @@ namespace ConsoleProblems
             Console.WriteLine($"Least Common Multiple: {lcm}");
         }
 
+        // 22. Statistics of Student List using LINQ
+        public class Student
+        {
+            public string Name { get; set; } = string.Empty;
+            public int Age { get; set; }
+            public double Score { get; set; }
+
+            public Student(string name, int age, double score)
+            {
+                Name = name;
+                Age = age;
+                Score = score;
+            }
+        };
+
+        static void PrintStudentStatistics()
+        {
+            var students = new List<Student>
+            {
+                new("An", 20, 8.5),
+                new("Bình", 21, 6.0),
+                new("Chi", 20, 9.0),
+                new("Dũng", 22, 5.5),
+                new("Em", 21, 7.5)
+            };
+
+            var studentsAbove7 = students.Where(s => s.Score >= 7).Select(s => s.Name);
+            var sortDescByScore = students.OrderByDescending(s => s.Score);
+            var avgScore = students.Average(s => s.Score);
+            var studentHighestScore = students.MaxBy(s => s.Score);
+            var studentGroupByAgeWithCount = students.CountBy(s => s.Age);
+            var studentBelow6 = students.Where(s => s.Score < 6).Select(s => s.Name);
+
+
+            Console.WriteLine($"{string.Join(", ", studentsAbove7)}");
+
+            foreach (var student in sortDescByScore)
+            {
+                Console.Write($"{student.Name} ({student.Score}), ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine(avgScore);
+            Console.WriteLine(studentHighestScore.Name);
+
+            foreach (var student in studentGroupByAgeWithCount)
+            {
+                Console.WriteLine($"Age {student.Key}: {student.Value} people, ");
+            }
+
+
+            if (studentBelow6 != null)
+            {
+                Console.Write("Yes (");
+                foreach (var student in studentBelow6)
+                {
+                    Console.Write($"{student}");
+                }
+                Console.Write(")");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            PrintGcdAndLcm(12, 18);
+            PrintStudentStatistics();
         }
 
         public static bool isPrime(int number)
